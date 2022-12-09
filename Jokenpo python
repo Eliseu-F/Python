@@ -1,0 +1,78 @@
+import random
+
+def faz_jogada( jog1, jog2 ):
+    vencedor = ""
+
+    if jog2 == 1:
+        print("computador: pedra\n")
+        
+        if jog1 == 1:
+            vencedor = "empate"
+
+        elif jog1 == 2:
+            vencedor = "Vencedor: jogador"
+
+        elif jog1 == 3:
+            vencedor = "Vencedor: computador"
+
+    elif jog2 == 2:
+        print("computador: papel\n")
+
+        if jog1 == 1:
+            vencedor = "Vencedor: computador"
+
+        elif jog1 == 2:
+            vencedor = "empate"
+
+        elif jog1 == 3:
+            vencedor = "Vencedor: jogador" 
+
+
+    elif jog2 == 3:
+        print("computador: tesoura\n")
+
+        if jog1 == 1:
+            vencedor = "Vencedor: jogador"
+
+        elif jog1 == 2:
+            vencedor = "Vencedor: computador"
+
+        elif jog1 == 3:
+            vencedor = "empate"
+
+    else:
+        print("Condicao invalida")
+
+    return vencedor
+
+#------------------
+print("#################")
+print("Jo Ken Po")
+print("#################")
+print()
+
+#Pedir a jogada
+print("Escolha Pedra, Papel ou Tesoura")
+print("1 - pedra")
+print("2 - papel")
+print("3 - tesoura")
+
+#opc usuario
+jogada = int( input() )
+
+if jogada == 1:
+    print("Voce jogou pedra\n")
+
+elif jogada == 2:
+    print("Voce jogou papel\n")
+
+elif jogada == 3:
+    print("Voce jogou tesoura\n")
+
+#opc computador2
+jogada_computador = random.randint(1,3)
+
+vencedor = ""
+
+vencedor = faz_jogada(jogada, jogada_computador)
+print(vencedor)
